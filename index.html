@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerodha</title>
+
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", serif;
+        }
+
+        .header {
+            font-size: 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 120px;
+            height: auto;
+        }
+
+        nav.navc {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-right: 100px;
+        }
+
+        nav.navc a {
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        nav.navc a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+
+        .main-image img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: cover;
+            margin: 50px 0;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+
+        .content p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .content button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .content button:hover {
+            background-color: #0056b3;
+        }
+
+        .interest {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .interest input {
+            padding: 8px;
+            width: 200px;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .interest button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #05a21c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .interest button:hover {
+            background-color: #0e8d00;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.svg" alt="Zerodha logo">
+        <nav class="navc">
+            <a href="#">Sign Up</a>
+            <a href="#">Product</a>
+            <a href="#">Support</a>
+            <a href="#">About</a>
+            <a href="#">Pricing</a>
+        </nav>
+    </div>
+
+    <div class="main-image">
+        <img src="trade.png" alt="Trading illustration">
+    </div>
+
+    <div class="content">
+        <h1>Invest in everything</h1>
+        <p>Online platform to invest in stocks, derivatives, mutual funds, and more</p>
+        <button>Sign Up Now</button>
+    </div>
+
+    <div class="interest">
+        <h1>Interest Calculator</h1>
+        <p>Principal Amount</p>
+        <input id="Principal" type="number" placeholder="Enter Principal" required>
+
+        <p>Interest Rate (%)</p>
+        <input id="Interest" type="number" placeholder="Enter Interest Rate" required>
+
+        <p>Time (years)</p>
+        <input id="Time" type="number" placeholder="Enter Time in Years" required>
+
+        <p></p>
+        <button onclick="calculate()">Calculate Interest</button>
+        <p id="res"></p>
+    </div>
+
+    <script>
+        function calculate() {
+            var principal = document.getElementById("Principal").value;
+            var interest = document.getElementById("Interest").value;
+            var time = document.getElementById("Time").value;
+
+            if (!principal || !interest || !time) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            var result = (principal * interest * time) / 100;
+            document.getElementById("res").innerText = "The interest is: " + result.toFixed(2);
+        }
+    </script>
+</body>
+</html>
