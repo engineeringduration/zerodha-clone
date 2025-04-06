@@ -9,6 +9,7 @@ A simple, responsive UI inspired by Zerodha, featuring an **Interest Calculator*
 ✅ **Responsive Design** using HTML & CSS.  
 ✅ **Interactive JavaScript Functionality** for interest computation.  
 
+**LIVE PAGE LINK :** https://engineeringduration.github.io/zerodha-clone/
 ---
 
 ## 📸 Screenshot  
